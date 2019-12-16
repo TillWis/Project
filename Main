@@ -1,1 +1,35 @@
+#first we need to install quandl to get financial data
+!pip install quandl
+import quandl
+#Authentication of the quandl api key
+quandl.ApiConfig.api_key = "rGYZAo_PxaWwJ3k43ntd"
 
+
+def get_dates():
+    # get user input for timeframe, it shoould be a string in format "YYYY-MM-DD"
+    # example input: start = "2010-05-01" end = "2010-07-20"
+    start  = input("Please enter your desired start date in the format: YYYY-MM-DD")
+    end = input("Please enter your desired end date in the format: YYYY-MM-DD")
+    return start, end
+
+
+# function for getting the tickers
+def get_ticker():
+   
+    # get userinput for amount of stocks they want
+    number_of_stocks = int(input(" Please enter the amount of stocks you want to consider for your portfolio"))
+    
+# create an empty list for the tickeres and then let the user enter the tickers, QUANDL only works with US-tickers
+        
+tickers = ()
+
+    for i in range(0,n):
+        tickers.append(input("Please Enter the Ticker/Symbol of stock number %i you are considering for your portfolio" % (i+1)))
+    
+    return n,tickers
+    
+data = quandl.get_table('WIKI/PRICES',  qopts = { 'columns': ['ticker', 'date', 'close'] }, 
+                                        ticker = [tickers], 
+                                        date = { 'gte': '2018-01-01', 'lte': '2019-01-01' })
+
+                  
