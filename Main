@@ -54,4 +54,7 @@ ticker_daily_returns = ticker['Adj Close'].pct_change()
 #head of daily returns listed
 print(ticker_daily_returns.head())
 
+#cumulative returns for the stock with 1$ investment (anpassen)
+netflix_cum_returns = (netflix_daily_returns + 1).cumprod()
+
                   
