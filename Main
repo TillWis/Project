@@ -31,5 +31,25 @@ tickers = ()
 data = quandl.get_table('WIKI/PRICES',  qopts = { 'columns': ['ticker', 'date', 'close'] }, 
                                         ticker = [tickers], 
                                         date = { 'gte': '2018-01-01', 'lte': '2019-01-01' })
+data.head()
+#this generates a table with the dates and the adjusted closing of this day
+
+#for a better visualisation we can show a plot of the adjusted closing price of the ticker
+# Define the figure size for the plot
+plt.figure(figsize=(10, 7))
+# Plot the adjusted close price
+data['Adj. Close'].plot()
+# Define the label for the title of the figure
+plt.title("Adjusted Close Price of %s" % ticker, fontsize=16)
+# Define the labels for x-axis and y-axis
+plt.ylabel('Price', fontsize=14)
+plt.xlabel('Year', fontsize=14)
+# Plot the grid lines
+plt.grid(which="major", color='k', linestyle='-.', linewidth=0.5)
+plt.show()
+
+#After downloading the stock prices during the timespan, we want to know the daily returns
+ticker_daily_returns = ticker['Adj Close'].pct_change()
+
 
                   
