@@ -51,5 +51,7 @@ plt.show()
 #After downloading the stock prices during the timespan, we want to know the daily returns
 ticker_daily_returns = ticker['Adj Close'].pct_change()
 
+#head of daily returns listed
+print(ticker_daily_returns.head())
 
                   
