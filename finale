@@ -1,0 +1,32 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas_datareader as web
+import datetime
+
+while True:
+    stock = input('Enter stock name: ')
+    total_shares = int(input('Total Shares: '))
+    startDate = input('Enter start date Format(YEAR-MONTH-DAY): ')
+    endDate = input('Enter end date Format(YEAR-MONTH-DAY): ')
+    
+    
+    print(startDate)
+    print(endDate)
+    stockData = web.get_data_yahoo(stock,
+                                   start=startDate,
+                                   end=endDate)
+    print(stockData.head(20))
+    print(stockData.tail(20))
+    dates = stockData['Adj Close'].plot()
+    purchasePrice = stockData['Adj Close'][1]
+    nowPrice = stockData['Adj Close'][-2]
+    purchasePrice = purchasePrice*total_shares
+    nowPrice = nowPrice * total_shares
+    profit = nowPrice - purchasePrice
+    print('Return of Investment: ', profit)
+    plt.xlabel('Date')
+    plt.ylabel('Adj Close')
+    plt.title('Stock Price '+stock)
+    plt.show()
+    print(dates)
