@@ -17,17 +17,17 @@ while True:
     endDate = input('Enter the end date (YEAR-MONTH-DAY): ')
     
     
-#printing Start and End Date    
+#printing start and end date    
     print(startDate)
     print(endDate)
     
     
-#getting the stock Data from Yahoo
+#getting the stock data from Yahoo
     stockData = web.get_data_yahoo(stock,
                                    start=startDate,
                                    end=endDate)
                            
-#showing the first 20 and last 20 Stock Data from the chosen stock                           
+#showing the first 20 and last 20 stock data from the chosen stock                           
     print(stockData.head(20))
     print(stockData.tail(20))
     
