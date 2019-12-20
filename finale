@@ -12,9 +12,9 @@ import datetime
 #user inputs 
 while True:
     stock = input('Enter stock name: ')
-    total_shares = int(input('How many Shares did you buy?: '))
-    startDate = input('Enter start date Format(YEAR-MONTH-DAY): ')
-    endDate = input('Enter end date Format(YEAR-MONTH-DAY): ')
+    total_shares = int(input('How many shares did you buy?: '))
+    startDate = input('Enter the start date (YEAR-MONTH-DAY): ')
+    endDate = input('Enter the end date (YEAR-MONTH-DAY): ')
     
     
 #printing Start and End Date    
