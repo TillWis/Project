@@ -1,5 +1,5 @@
 #Project for the Programming Introduction Course
-#This Project will calculate the Return on Investment and visualizing it to show what we have learned in the course
+#This Project will calculate the return on investment and visualizing it to show what we have learned in the course
 
 
 #importing everything which is needed for this project
@@ -11,7 +11,7 @@ import datetime
 
 #user inputs 
 while True:
-    stock = input('Enter stock name: ')
+    stock = input('Enter stock name (use ticker name): ')
     total_shares = int(input('How many shares did you buy?: '))
     startDate = input('Enter the start date (YEAR-MONTH-DAY): ')
     endDate = input('Enter the end date (YEAR-MONTH-DAY): ')
